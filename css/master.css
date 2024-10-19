@@ -1,0 +1,319 @@
+
+:root{
+    --main-color:#f2cb74;
+    
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: "Cairo", sans-serif;
+}
+
+.container{
+    /* background-color: red; */
+    width: 1170px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 0 auto;
+}
+
+/* start settigns box */
+.settings-box{
+position: fixed;
+/* should be -200px */
+left: -200px;
+/* left: 0; */
+width: 200px;
+min-height: 100vh;
+z-index: 10;
+background-color: #fffffff2;
+transition: .3s;
+
+}
+
+.settings-box.opened{
+    left: 0;
+}
+.settings-box .gear-icon{
+    background-color: #fffffff2;
+    position: absolute;
+    left: 200px;
+    top: 145px;
+    /* padding: 5px 10px; */
+    border-radius: 3px;
+    cursor: pointer;
+}
+.settings-box .gear-icon i{
+    padding: 10px;
+}
+
+.settings-box .option-box{
+    padding: 10px;
+    background-color: #eee;
+    text-align: center;
+}
+
+.settings-box .option-box h4{
+    margin-bottom: 5px;
+    color: #666;
+    
+}
+
+.settings-box .option-box .colors-list{
+    list-style: none;
+    text-align: center;
+    cursor: pointer;
+
+}
+
+.settings-box .option-box .colors-list li{
+    text-decoration: none;
+    opacity: .6;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #333;
+    display: inline-block;
+    box-sizing: border-box; /* Add this line */
+}
+
+.settings-box .option-box .colors-list li.active{
+    opacity:1;
+
+}
+
+.settings-box .option-box .colors-list li:first-child{
+    background-color: #f2cb74;
+}
+.settings-box .option-box .colors-list :nth-child(2){
+    background-color: #E91E63;
+}
+
+.settings-box .option-box .colors-list :nth-child(3){
+    background-color: #009688;
+}
+
+.settings-box .option-box .colors-list :nth-child(4){
+    background-color: #03A9F4;
+}
+.settings-box .option-box .colors-list :nth-child(5){
+    background-color: #03F5DA;
+}
+
+
+
+.settings-box .option-box .yes,
+.settings-box .option-box .no{
+
+    padding: 5px 15px;
+    margin-bottom: 10px;
+    color: #fff;
+    border-radius: 10px;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    opacity: .5;
+}
+
+.settings-box .option-box .yes{
+    background-color: #009688;
+}
+
+.settings-box .option-box .no{
+    background-color: red;
+}
+
+.settings-box .option-box .active{
+    opacity: 1;
+}
+
+/* end settings box */
+
+
+/* start landing page */
+.landing-page{
+    min-height: 100vh;
+    background-image: url("../imgs/img1.jpg");
+    background-size: cover;
+    position: relative;
+}
+.overlay{
+    position: absolute;
+    left: 0;
+    height: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, .6);
+    z-index: 1;
+}
+.landing-page .header{
+    position: relative;
+    color: white;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+    color: white;
+}
+
+.landing-page .logo{
+ font-size: 17px;
+ font-weight: 700;
+}
+
+.landing-page .logo.disappear{
+    color: transparent;
+}
+.landing-page .links ul{
+    list-style: none;
+    display: flex;
+}
+.landing-page .links ul li{
+    margin-left: 30px;
+}
+.landing-page .links ul li a{
+    text-decoration: none;
+    color: white;
+    transition: .3s;
+}
+.landing-page .links ul li a:hover,
+.landing-page .links ul .active{
+    color: var(--main-color);
+}
+
+.intro-text{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    color: white;
+    z-index: 2;
+    text-align: center;
+    /*  i don't know if it's correct */
+    max-width: 500px;
+}
+.intro-text span{
+    color: var(--main-color);
+}
+.intro-text h1{
+    font-weight: 800;
+    font-size: 34px;
+}
+.intro-text p{
+    line-height: 1.4;
+    font-size: 20px;
+}
+/* end landing page */
+
+
+/* start about us */
+.about-us{
+    padding: 50px 0;
+    display: flex;
+}
+.about-us .info{
+    padding-top: 20px;
+    flex: 1;
+
+}
+.about-us .info h2{
+    font-weight: 800;
+    font-size: 30px;
+    color: var(--main-color);
+}
+.about-us .info p{
+    line-height: 1.8;
+    color: #777;
+    margin: 0;
+}
+
+.about-us .image {
+    flex: 1;
+    text-align: center;
+}
+
+.about-us .image img{
+    width: 250px;
+}
+/* end about us */
+
+/* start out skills */
+.skills{
+    padding: 50px 0;   
+    background-color: #eee; 
+}
+
+.skills h2{
+    font-weight: 800;
+    font-size: 30px;
+    color: var(--main-color);
+    text-align: center;
+}
+
+.skills .skill-box{
+    background-color: #fff;
+    padding: 15px;
+    margin: 15px;
+    display: flex;
+}
+
+.skills .skill-box .skill-name{
+    font-weight: bold;
+    width: 100px;
+    text-align: center;
+    
+
+}
+
+.skills .skill-box .skill-progress{
+    background-color: #f6f6f6;
+    height: 30px;
+    width: calc(100% - 110px);
+    border-radius: 6px;
+    position: relative;
+}
+
+.skills .skill-box .skill-progress span{
+    position: absolute;
+    background-color: var(--main-color);
+    left: 0;
+    top: 0;
+    width: 0;
+    height: 100%;
+    border-radius: 6px;
+    transition: all .5s;
+}
+/* end our skills */
+
+
+/* start out Gallery */
+.gallery{
+    padding: 50px 0;   
+}
+
+.gallery h2{
+    font-weight: 800;
+    font-size: 30px;
+    color: var(--main-color);
+    text-align: center;
+}
+
+.gallery .images{
+    text-align: center;
+}
+
+.gallery .images img{
+    width: 200px;
+    height: 150px;
+    margin: 5px;
+    padding: 3px;
+    border: 1px solid #CCC;
+    background-color: #f6f6f6;
+    cursor: pointer;
+}
+/* end out Gallery */
