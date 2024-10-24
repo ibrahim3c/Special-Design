@@ -41,30 +41,81 @@
         </div>
         <div class="option-box">
           <h4>Randon Background</h4>
-          <span class="yes active" data-random="yes">Yes</span>
-          <span class="no" data-random="no">No</span>
+          <div class="background-option">
+            <span class="yes active" data-random="yes">Yes</span>
+            <span class="no" data-random="no">No</span>
+          </div>
         </div>
+
+        <div class="option-box">
+          <h4>Show Bullets</h4>
+          <div class="bullets-option">
+            <span class="yes active" data-show="yes">Yes</span>
+            <span class="no" data-show="no">No</span>
+          </div>
+        
+        </div>
+
+        <button class="reset-option">
+          Reset Option
+        </button>
+       
       </div>
     </div>
+
+    <!-- start nav bullet -->
+     <div class="nav-bullets" >
+      <div class="bullet" data-section=".about-us">
+        <div class="tooltip">About Us</div>
+      </div>
+
+      <div class="bullet" data-section=".skills">
+        <div class="tooltip">Our Skills</div>
+        
+      </div>
+
+      <div class="bullet" data-section=".gallery">
+        <div class="tooltip">Our Gallery</div>
+        
+      </div>
+
+      <div class="bullet" data-section=".timeline">
+        <div class="tooltip">TimeLine</div>
+        
+      </div>
+
+      <div class="bullet" data-section=".features">
+        <div class="tooltip">Features</div>        
+      </div>
+
+      <div class="bullet" data-section=".testimonials">
+        <div class="tooltip">Testimonials</div>
+        
+      </div>
+     </div>
+
+     <!-- end nav bullet -->
 
     <!-- end settings box -->
     <!-- start landig page -->
     <div class="landing-page">
       <!--  -->
       <div class="overlay"></div>
-    <div class="container">
-      <div class="header">
-        <div class="logo">Special Design</div>
-        <div class="links">
-          <ul>
-            <li><a class="active" href="#About">About</a></li>
-            <li><a href="#service">service</a></li>
-            <li><a href="#Product">Product</a></li>
-            <li><a href="#Contact">Contact</a></li>
-          </ul>
+      <div class="container">
+        <div class="header">
+          <div class="logo">Special Design</div>
+          <div class="links">
+            <ul>
+              <li><a class="active" href="#about">About</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#gallery">Gellery</a></li>
+              <li><a href="#timeline">TimeLine</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#testimonials">Testimonials</a></li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
       <div class="intro-text">
         <h1>We are <span>Hany</span> Agency</h1>
         <p>
@@ -76,82 +127,260 @@
     <!-- end landing page -->
 
     <!-- start about us -->
-     <div class="container">
-      <div class="about-us">
-       <div class="info">
-        <h2>About Us</h2>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, ex!
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, ex!
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, ex!
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, ex!
-        </p>
-       </div>
-       <div class="image">
-        <img src="imgs/about-us.jpg" alt="">
-       </div>
+    <div class="container">
+      <div id="about" class="about-us">
+        <div class="info">
+          <h2>About Us</h2>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, ex!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, ex!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, ex!
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque, ex!
+          </p>
+        </div>
+        <div class="image">
+          <img src="imgs/about-us.jpg" alt="" />
+        </div>
       </div>
-     </div>
-     <!-- end about us -->
+    </div>
+    <!-- end about us -->
 
-     <!-- start out skills -->
-     <div class="skills">
+    <!-- start out skills -->
+    <div id="skills"  class="skills">
       <div class="container">
-          <h2>Our Skills</h2>
-          <div class="skill-box">
-            <div class="skill-name">HTML</div>
-            <div class="skill-progress">
-              <span data-progress="80%"></span>
-            </div>
+        <h2>Our Skills</h2>
+        <div class="skill-box">
+          <div class="skill-name">HTML</div>
+          <div class="skill-progress">
+            <span data-progress="80%"></span>
           </div>
-          <div class="skill-box">
-            <div class="skill-name">CSS</div>
-            <div class="skill-progress">
-              <span data-progress="20%"></span>
-            </div>
+        </div>
+        <div class="skill-box">
+          <div class="skill-name">CSS</div>
+          <div class="skill-progress">
+            <span data-progress="20%"></span>
           </div>
-          <div class="skill-box">
-            <div class="skill-name">JS</div>
-            <div class="skill-progress">
-              <span data-progress="50%"></span>
-            </div>
+        </div>
+        <div class="skill-box">
+          <div class="skill-name">JS</div>
+          <div class="skill-progress">
+            <span data-progress="50%"></span>
           </div>
+        </div>
 
-          <div class="skill-box">
-            <div class="skill-name">C#</div>
-            <div class="skill-progress">
-              <span data-progress="60%"></span>
+        <div class="skill-box">
+          <div class="skill-name">C#</div>
+          <div class="skill-progress">
+            <span data-progress="60%"></span>
+          </div>
+        </div>
+        <div class="skill-box">
+          <div class="skill-name">SQL</div>
+          <div class="skill-progress">
+            <span data-progress="70%"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end out  skills -->
+
+    <!-- start our Gallery -->
+    <div id="gallery" class="gallery">
+      <div class="container">
+        <h2>Our Gallery</h2>
+        <div class="images">
+          <img src="imgs/img1.jpg" alt="img1" />
+          <img src="imgs/img2.jpg" alt="img2" />
+          <img src="imgs/img3.jpg" alt="img3" />
+          <img src="imgs/img4.jpg" alt="img3" />
+          <img src="imgs/img5.jpg" alt="img4" />
+          <img src="imgs/img2.jpg" alt="img5" />
+          <img src="imgs/img3.jpg" alt="img6" />
+          <img src="imgs/img4.jpg" alt="img7" />
+          <img src="imgs/img5.jpg" alt="img8" />
+          <img src="imgs/img5.jpg" alt="img9" />
+        </div>
+      </div>
+    </div>
+    <!-- end our Gallery -->
+
+    <!-- start timeline -->
+
+    <div id="timeline" class="timeline">
+      <div class="container">
+        <div class="timeline-content">
+          <div class="year">2024</div>
+          <div class="left">
+            <div class="content">
+              <h3>Testing Heading</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
+                corporis hic blanditiis eligendi sapiente dicta, a ut ad placeat
+                porro quibusdam quia iure voluptatem architecto dolores
+                asperiores tenetur cum nam?
+              </p>
             </div>
           </div>
-          <div class="skill-box">
-            <div class="skill-name">SQL</div>
-            <div class="skill-progress">
-              <span data-progress="70%"></span>
+          <div class="clear"></div>
+
+          <div class="right">
+            <div class="content">
+              <h3>Testing Heading</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
+                corporis hic blanditiis eligendi sapiente dicta, a ut ad placeat
+                porro quibusdam quia iure voluptatem architecto dolores
+                asperiores tenetur cum nam?
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- this is my code -->
+        <div class="timeline-content">
+          <div class="year">2026</div>
+          <div class="left">
+            <div class="content">
+              <h3>Testing Heading</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
+                corporis hic blanditiis eligendi sapiente dicta, a ut ad placeat
+                porro quibusdam quia iure voluptatem architecto dolores
+                asperiores tenetur cum nam?
+              </p>
+            </div>
+          </div>
+          <div class="clear"></div>
+
+          <div class="right">
+            <div class="content">
+              <h3>Testing Heading</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa
+                corporis hic blanditiis eligendi sapiente dicta, a ut ad placeat
+                porro quibusdam quia iure voluptatem architecto dolores
+                asperiores tenetur cum nam?
+              </p>
             </div>
           </div>
         </div>
       </div>
-      <!-- end out  skills -->
+    </div>
+    <!-- end timeline -->
 
-      <!-- start our Gallery -->
-       <div class="gallery">
-        <div class="container">
-          <h2>Our Gallery</h2>
-          <div class="images">
-            <img src="imgs/img1.jpg" alt="">
-            <img src="imgs/img2.jpg" alt="">
-            <img src="imgs/img3.jpg" alt="">
-            <img src="imgs/img4.jpg" alt="">
-            <img src="imgs/img5.jpg" alt="">
-            <img src="imgs/img2.jpg" alt="">
-            <img src="imgs/img3.jpg" alt="">
-            <img src="imgs/img4.jpg" alt="">
-            <img src="imgs/img5.jpg" alt="">
-            <img src="imgs/img5.jpg" alt="">
+    <!-- start features -->
+    <div id="features" class="features">
+      <h2>Our Features</h2>
+      <div class="container">
+        <div class="feat">
+          <div class="feat-box">
+            <img src="imgs/img1.jpg" alt="" />
+            <h4>Development</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa,
+              illum.
+            </p>
+          </div>
+
+          <div class="feat-box">
+            <img src="imgs/img1.jpg" alt="" />
+            <h4>Development</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa,
+              illum.
+            </p>
+          </div>
+
+          <div class="feat-box">
+            <img src="imgs/img1.jpg" alt="" />
+            <h4>Development</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa,
+              illum.
+            </p>
+          </div>
+
+          <div class="feat-box">
+            <img src="imgs/img1.jpg" alt="" />
+            <h4>Development</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa,
+              illum.
+            </p>
+          </div>
+
+          <div class="feat-box">
+            <img src="imgs/img1.jpg" alt="" />
+            <h4>Development</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa,
+              illum.
+            </p>
+          </div>
+
+          <div class="feat-box">
+            <img src="imgs/img1.jpg" alt="" />
+            <h4>Development</h4>
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa,
+              illum.
+            </p>
           </div>
         </div>
-       </div>
-      <!-- end our Gallery -->
+      </div>
+    </div>
+    <!-- end features -->
+
+    <!-- start testimonials -->
+    <div  id="testimonials" class="testimonials">
+      <div class="container">
+        <h2>Testimonials</h2>
+        <div class="ts-container">
+          <div class="ts-box">
+            <p>
+              it is the best product , i am very happy with this product and
+              your services
+            </p>
+            <div class="person-info">
+              <img src="https://placeholder.com/80/DDD" alt="test" />
+              <div class="text">
+                <h4>Ibrahim Hany</h4>
+                <p>CEO At HanyShop</p>
+              </div>
+            </div>
+          </div>
+
+            <div class="ts-box">
+            <p>
+              it is the best product , i am very happy with this product and
+              your services
+            </p>
+            <div class="person-info">
+              <img src="https://placeholder.com/80/DDD" alt="test" />
+              <div class="text">
+                <h4>Ibrahim Hany</h4>
+                <p>CEO At HanyShop</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="ts-box">
+            <p>
+              it is the best product , i am very happy with this product and
+              your services
+            </p>
+            <div class="person-info">
+              <img src="https://placeholder.com/80/DDD" alt="test" />
+              <div class="text">
+                <h4>Ibrahim Hany</h4>
+                <p>CEO At HanyShop</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end testimonials -->
     <script src="js\master.js"></script>
   </body>
 </html>

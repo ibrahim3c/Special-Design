@@ -5,7 +5,6 @@ let backgroundOption=true;
 
         // main color
         if(localStorage.getItem("mainColor")){
-            console.log(localStorage.getItem("mainColor"))
 
         document.documentElement.style.setProperty('--main-color',localStorage.getItem("mainColor"))
 
@@ -19,7 +18,7 @@ let backgroundOption=true;
                 el.classList.add("active")
             }
         })
-
+    }
         // random background
 
         if(localStorage.getItem("isRandomBackground")){
@@ -27,14 +26,14 @@ let backgroundOption=true;
 
             if(localStorage.getItem("isRandomBackground")==="yes"){
                 backgroundOption=true
-                randomBackground()
             }
             if(localStorage.getItem("isRandomBackground")==="no"){
                 backgroundOption=false
                 clearInterval(randomBackground)
             }
 
-            document.querySelectorAll(".option-box span").forEach(el=>{
+            document.querySelectorAll(".background-option span").forEach(el=>{
+                console.log(el) // no
                 if(el.classList.contains("active")){
     
                     el.classList.remove("active")
@@ -44,28 +43,53 @@ let backgroundOption=true;
                 }
             })
 
+           
         }
 
-        document.querySelectorAll(".option-box span").forEach(el=>{
-            if(el.classList.contains("active")){
 
-                el.classList.remove("active")
+
+
+          //bullet option
+
+          if(localStorage.getItem("isBulletShowed")){
+            document.querySelectorAll(".bullets-option span").forEach(el=>{
+                if(el.classList.contains("active")){
+    
+                    el.classList.remove("active")
+                }
+                if(el.dataset.show===localStorage.getItem("isBulletShowed")){
+                    el.classList.add("active")
+                }
+            })
+
+
+            if(localStorage.getItem("isBulletShowed")==="yes"){
+
+                document.querySelector(".nav-bullets").style.display = "block";
             }
-            if(el.dataset.random===localStorage.getItem("isRandomBackground")){
-                el.classList.add("active")
+
+            if(localStorage.getItem("isBulletShowed")==="no"){
+                document.querySelector(".nav-bullets").style.display = "none";
             }
-        })
+
+        }
+        }
+
+      
+
+       
+        //
+
+       
         
 
 
 
-    }
-}
+    
 
 
 // toggle spin icon
 document.querySelector(".settings-box i").onclick = function() {
-    console.log("done")
     // for spin
     this.classList.toggle("fa-spin");
     // for open and close sidebar
@@ -85,26 +109,17 @@ colorsList.forEach((li)=>{
         localStorage.setItem("mainColor",e.target.dataset.color)
 
         // set active class to this element
-        //1-remove active from  all element
-        e.target.parentElement.querySelectorAll(".active").forEach(el=>{
-            el.classList.remove("active")
-        })
-
-        //2-add active to  the clicked element
-        e.target.classList.add("active")
-        console.log(e.target.classList)
+        HandleActive(e)
     })
 })
 
 
-
-// random background
-document.querySelectorAll(".option-box  span ").forEach((li)=>{
+// random background and bullet option
+document.querySelectorAll(".background-option span ").forEach((li)=>{
     li.addEventListener("click",(e)=>{
         
     
         if(e.target.dataset.random==="no"){
-            console.log("no")
 
             backgroundOption=false;
             clearInterval(randomBackground)
@@ -112,9 +127,10 @@ document.querySelectorAll(".option-box  span ").forEach((li)=>{
 
         else{
             backgroundOption=true
-            console.log("yes")
             setIntervalBackground()
         }
+
+      
             
 
         // store this color in local storage
@@ -122,32 +138,10 @@ document.querySelectorAll(".option-box  span ").forEach((li)=>{
 
         // set active class to this element
         //1-remove active from  all element
-        e.target.parentElement.querySelectorAll(".active").forEach(el=>{
-            el.classList.remove("active")
-        })
-
-        //2-add active to  the clicked element
-        e.target.classList.add("active")
-        console.log(e.target.classList)
+       HandleActive(e)
     })
 })
 
-
-// let links= document.querySelectorAll(".landing-page .links li");
-// links.forEach(li=>{
-//     li.addEventListener("mouseenter",(e)=>{
-    
-//         // set active class to this element
-//         //1-remove active from  all element
-//         e.target.parentElement.querySelectorAll(".active").forEach(el=>{
-//             el.classList.remove("active")
-//         })
-
-//         //2-add active to  the clicked element
-//         e.target.classList.add("active")
-//         console.log(e.target.classList)
-//     })
-// });
 
 let landingPage=document.querySelector(".landing-page");
 let imgs=["img1.jpg","img2.jpg","img3.jpg","img4.jpg","img5.jpg"];
@@ -161,7 +155,7 @@ function setIntervalBackground(){
         randomBackground=setInterval(() => {
             let randomNumber=Math.floor(Math.random()*imgs.length);
             landingPage.style.backgroundImage=`url("../imgs/${imgs[randomNumber]}")` 
-        }, 1000);
+        }, 10000);
     }
     
 }
@@ -169,7 +163,6 @@ function setIntervalBackground(){
 setIntervalBackground();
 
 // skill-box
-
 let ourSkills=document.querySelector(".skills");
 window.onscroll=function(){
     // skill offset top
@@ -182,8 +175,6 @@ window.onscroll=function(){
     let scrollTop = this.pageYOffset;
 
 
-    console.log("the scroll" , scrollTop)
-    console.log("sum" ,(offset + outerHeight- windowHeight ) )
 
     if(scrollTop >= (offset + outerHeight- windowHeight )){
 
@@ -192,13 +183,120 @@ window.onscroll=function(){
             p.style.width=p.dataset.progress;
         })
     }
-    // else{
-    //     let progress=document.querySelectorAll(".skill-progress span")
-    //     progress.forEach(p=>{
-    //         p.style.width="0";
-    //         console.log(p.style.width)
-    //     })
-
-    // }
+    
 
 }
+
+
+// our gallery
+document.querySelectorAll(".gallery img").forEach(img=>{
+    img.addEventListener("click",(e)=>{
+        // create overlay
+        let overlay=document.createElement("div");
+        overlay.className="popup-overlay"
+        document.body.appendChild(overlay);
+
+        // create popup box
+        let popupBox=document.createElement("div");
+        popupBox.className="popup-box";
+
+        // create image header
+        if(img.alt!=null){
+            text=document.createTextNode(img.alt);
+            imageHeader=document.createElement("h3");
+            imageHeader.appendChild(text);
+
+            popupBox.appendChild(imageHeader)
+        }
+
+        //create image
+        let image=document.createElement("img");
+        image.src=img.src;
+
+        popupBox.appendChild(image);
+
+        // create closedButton
+        closedButton=document.createElement("span");
+        btnText=document.createTextNode("X");
+        closedButton.appendChild(btnText)
+        closedButton.className="btn-closed";
+
+        popupBox.appendChild(closedButton)
+
+        document.body.appendChild(popupBox)
+    })
+});
+
+// close popup
+document.addEventListener("click" ,(e)=>{
+    if(e.target.className=="btn-closed"){
+        e.target.parentElement.remove();
+
+
+        document.querySelector(".popup-overlay").remove();
+    }
+})
+
+// bullets
+document.querySelectorAll(".bullet").forEach(b=>{
+    b.addEventListener("click",(e)=>{
+        document.querySelector(e.target.dataset.section).scrollIntoView({
+            behavior:'smooth'
+        })
+    })
+})
+
+
+// handle activeClass
+function HandleActive(e){
+    e.target.parentElement.querySelectorAll(".active").forEach(el=>{
+        el.classList.remove("active")
+    })
+
+    //2-add active to  the clicked element
+    e.target.classList.add("active")
+}
+
+
+
+
+
+// random background and bullet option
+document.querySelectorAll(".bullets-option span ").forEach((li)=>{
+    li.addEventListener("click",(e)=>{
+        
+        
+        if(e.target.dataset.show==="no"){
+            document.querySelector(".nav-bullets").style.display = "none";
+            
+        }
+        
+        else{
+            document.querySelector(".nav-bullets").style.display="block"
+            
+        }
+        
+        
+        
+        
+        // store this color in local storage
+        localStorage.setItem("isBulletShowed",e.target.dataset.show)
+
+        // set active class to this element
+        //1-remove active from  all element
+       HandleActive(e)
+    })
+})
+
+
+
+// reset button
+document.querySelector(".reset-option").addEventListener("click",()=>{
+    // clear local storage
+    localStorage.removeItem("mainColor")
+    localStorage.removeItem("isRandomBackground")
+    localStorage.removeItem("isBulletShowed")
+    
+
+    window.location.reload();
+})
