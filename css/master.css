@@ -14,7 +14,8 @@ body{
 
 .container{
     /* background-color: red; */
-    width: 1170px;
+    /* width: 1170px; */
+    max-width: 540px;
     padding-left: 15px;
     padding-right: 15px;
     margin: 0 auto;
@@ -156,6 +157,10 @@ padding: 10px;
     background-size: cover;
     position: relative;
 }
+.landing-page .container{
+    position: relative;
+    z-index: 1000;
+}
 .overlay{
     position: absolute;
     left: 0;
@@ -184,6 +189,66 @@ padding: 10px;
 .landing-page .logo.disappear{
     color: transparent;
 }
+
+.toggle-menu{
+    background: none;
+    border: none;
+    width: 35px;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 991px) {
+    .landing-page .links:not(.links.open)  {
+        display: none;
+    }
+    .landing-page .toggle-menu {
+        display: block;
+    }
+
+
+    /* when open the toggle */
+.landing-page .links.open ul{
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 100%;
+}
+
+.landing-page .links.open ul::before{
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: 0;
+    width: 0;
+    height: 0;
+    border: 10px solid;
+    border-color: transparent transparent #fff transparent;
+}
+
+.landing-page .links.open ul li a{
+    text-decoration: none;
+    color: var(--main-color);
+    transition: .3s;
+    font-weight: 600;
+}
+    
+
+}
+
+
+
+
+.toggle-menu span{
+    background-color:#fff;
+    height: 4px;
+    display: block;
+    margin-bottom: 3px;
+
+}
 .landing-page .links ul{
     list-style: none;
     display: flex;
@@ -196,6 +261,10 @@ padding: 10px;
     color: white;
     transition: .3s;
 }
+
+
+
+
 .landing-page .links ul li a:hover,
 .landing-page .links ul .active{
     color: var(--main-color);
@@ -210,8 +279,9 @@ padding: 10px;
     z-index: 2;
     text-align: center;
     /*  i don't know if it's correct */
-    max-width: 500px;
+    width: 96%;
 }
+
 .intro-text span{
     color: var(--main-color);
 }
@@ -219,10 +289,24 @@ padding: 10px;
     font-weight: 800;
     font-size: 34px;
 }
+
+
+@media (max-width: 575px) {
+    .intro-text h1{
+        font-size: 25px;
+    }
+    
+}
+
+
 .intro-text p{
     line-height: 1.4;
     font-size: 20px;
 }
+
+
+
+
 /* end landing page */
 
 
@@ -231,11 +315,27 @@ padding: 10px;
     padding: 50px 0;
     display: flex;
 }
+
+
+
 .about-us .info{
     padding-top: 20px;
     flex: 1;
 
 }
+
+@media (max-width: 767px) {
+    .about-us{
+        display: block;
+        text-align: center;
+    }
+
+    .about-us .info{
+        padding-top: 0;
+    }
+    
+}
+
 .about-us .info h2{
     font-weight: 800;
     font-size: 30px;
@@ -255,6 +355,8 @@ padding: 10px;
 .about-us .image img{
     width: 250px;
 }
+
+
 /* end about us */
 
 /* start out skills */
@@ -262,6 +364,7 @@ padding: 10px;
     padding: 50px 0;   
     background-color: #eee; 
 }
+
 
 .skills h2{
     font-weight: 800;
@@ -291,6 +394,23 @@ padding: 10px;
     width: calc(100% - 110px);
     border-radius: 6px;
     position: relative;
+}
+
+@media (max-width: 575px) {
+    .skills .skill-box{
+       flex-direction: column;
+       align-items: center;
+    }
+
+    .skills .skill-box .skill-progress{
+        width: 100%;
+    }
+
+    .skills .skill-box .skill-name{
+        margin-bottom: 10px;
+
+    }
+    
 }
 
 .skills .skill-box .skill-progress span{
@@ -570,6 +690,8 @@ padding: 10px;
 }
 
 
+
+
 .testimonials::before,
 .testimonials::after{
     position: absolute;
@@ -631,6 +753,8 @@ padding: 10px;
     align-items: center;
 }
 
+
+
 .testimonials .ts-box .person-info img{
     border-radius: 50%;
     margin-right: 17px;
@@ -646,6 +770,29 @@ padding: 10px;
 .testimonials .ts-box .person-info .text p{
     font-size: 15px;
     color: #777;
+}
+
+
+@media (max-width: 991px){
+    .testimonials .ts-box .person-info{
+        flex-direction: column;
+         justify-content: center;
+    }
+
+    .testimonials .ts-box .person-info img{
+        margin-bottom: 10px;
+    }
+    
+}
+
+
+@media (max-width: 767px){
+    .testimonials .ts-box{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    
 }
 
 /* end testimonials */
@@ -702,3 +849,163 @@ padding: 10px;
  
 }
 /* end nav bullet  */
+
+
+/* start contact-us */
+
+.contact{
+    min-height: 600px;
+    background-image: url("../imgs/contact.jpg");
+    background-size: cover;
+    padding: 80px 0;
+    position: relative; }
+
+
+    
+.contact .container{
+    position: relative;
+    z-index: 100;
+}
+
+.contact::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255 255 255/30%);
+}
+
+
+.contact h2{
+    font-weight: bold;
+    font-size: 30px;
+    color: var(--main-color);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+
+.contact form{
+    display: flex;
+    max-width: 800px;
+    margin: 0 auto;
+    justify-content: space-between;
+   
+}
+
+.contact form .left ,
+.contact form .right{
+    width: 49%;
+}
+
+.contact form input:not([type="submit"]),
+.contact form textarea{
+    display: block;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    text-align: center;
+    background-color: rgba(218, 218, 218,0.30);
+    border-radius: 10px;
+
+}
+
+
+.contact form input:not([type="submit"]):focus,
+.contact form textarea:focus{
+    outline: 1px solid var(--main-color);
+}
+
+.contact input{
+    height: 50px;
+}
+.contact textarea{
+    height:180px;
+
+}
+
+.contact form input[type="submit"]{
+    padding: 10px 0;
+    width: 100%;
+    border-color: transparent;
+    background-color: var(--main-color);
+    color: #fff;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.contact textarea:focus::-webkit-input-placeholder,
+.contact input:not([type="submit"]):focus::-webkit-input-placeholder
+{
+    opacity: 0;
+    transition: 0.3s;
+}
+
+
+@media (max-width: 767px){
+    .contact form 
+        {
+            flex-direction: column;
+            align-items: center;
+    }
+
+    .contact form .left,
+    .contact form .right
+    {
+        width: 100%;
+    }
+
+    
+}
+
+
+/* end contact-us */
+
+/* start footer */
+.footer{
+    width: 100%;
+    height: 50px;
+    background-color: var(--main-color);
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+}
+
+/* end footer */
+/* start grid sys */
+
+/* small devices=> landscape phones */
+@media (min-width: 576px){
+    .container{
+        max-width: 540px;
+    }
+}
+
+
+/* medium devices => tablets */
+@media (min-width: 768px){
+    .container{
+        max-width: 720px;
+    }
+}
+
+/* desktop */
+@media (min-width: 992px){
+    .container{
+        max-width: 960px;
+    }
+}
+
+/* larg screen */
+
+@media (min-width: 1200px){
+    .container{
+        max-width: 1140px;
+    }
+}
+/* end grid sys */

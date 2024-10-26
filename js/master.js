@@ -300,3 +300,11 @@ document.querySelector(".reset-option").addEventListener("click",()=>{
 
     window.location.reload();
 })
+
+
+document.querySelector(".toggle-menu").onclick=function(){
+    let links=document.querySelector(".landing-page .links ");
+
+    links.classList.toggle("open")
+
+}
